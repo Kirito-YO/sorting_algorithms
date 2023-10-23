@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * selection_sort - function sorts array of integers in using selection 
+ * selection_sort - function sorts array of integers in using selection
  * @array: var1
  * @size: var2
  * Return: null.
