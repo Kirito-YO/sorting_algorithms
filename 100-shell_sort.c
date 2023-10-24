@@ -1,10 +1,10 @@
 #include "sort.h"
 /**
-  * sort_by_shell - shell sort, k sequence
+  * shell_sort - shell sort, k sequence
   * @array: VAR1
   * @size: VAR2
   */
-void sort_by_shell(int *array, size_t size)
+void shell_sort(int *array, size_t size)
 {
 	size_t k, a, b;
 	int t;
