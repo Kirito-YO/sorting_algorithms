@@ -8,64 +8,64 @@ void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size <= 1)
 		return;
-	sort_alg(array, 0, size - 1, size);
+	sort_rec_alg(array, 0, size - 1, size);
 }
 
 /**
-  * sort_alg - recursive sorting algorithm
-  * @arr: array
-  * @left: leftmost index
-  * @right: rightmost index
-  * @size: full size of array
+  * sort_rec_algo - sorting algorithm (recursive)
+  * @arr: VAR1
+  * @left: VAR2
+  * @right: VAR3
+  * @size: VAR4
   */
-void sort_alg(int *arr, int left, int right, size_t size)
+void sort_rec_alg(int *arr, int left, int right, size_t size)
 {
-	int pivot;
+	int p;
 
 	if (left < right)
 	{
-		pivot = split(arr, left, right, size);
-		sort_alg(arr, left, pivot - 1, size);
-		sort_alg(arr, pivot + 1, right, size);
+		p = sp(arr, left, right, size);
+		sort_rec_alg(arr, left, p - 1, size);
+		sort_rec_alg(arr, p + 1, right, size);
 	}
 }
 
 /**
-  * split - split array
-  * @arr: array
-  * @left: leftmost index
-  * @right: rightmost index
-  * @size: full array size
-  * Return: pivot index
+  * sp - split array
+  * @arr: VAR1
+  * @left: VAR2
+  * @right: VAR3
+  * @size: VAR4
+  * Return: p index
   */
-int split(int *arr, int left, int right, size_t size)
+int sp(int *arr, int left, int right, size_t size)
 {
-	int i, i2, pivot, tmp;
+	int a, b, p, t;
 
-	pivot = arr[right];
-	i = left;
+	p = arr[right];
+	a = left;
 
-	for (i2 = left; i2 < right; i2++)
+	for (b = left; b < right; b++)
 	{
-		if (arr[i2] < pivot)
+		if (arr[b] < p)
 		{
-			if (i != i2)
+			if (a != b)
 			{
-				tmp = arr[i2];
-				arr[i2] = arr[i];
-				arr[i] = tmp;
+				t = arr[b];
+				arr[b] = arr[a];
+				arr[a] = t;
 				print_array(arr, size);
 			}
-			i++;
+			a++;
 		}
 	}
-	if (arr[i] != arr[right])
+	if (arr[a] != arr[right])
 	{
-		tmp = arr[i];
-		arr[i] = arr[right];
-		arr[right] = tmp;
+		t = arr[a];
+		arr[a] = arr[right];
+		arr[right] = t;
 		print_array(arr, size);
 	}
 
-	return (i);
+	return (a);
 }
