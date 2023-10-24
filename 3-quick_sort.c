@@ -8,7 +8,7 @@ void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size <= 1)
 		return;
-	sort_rec_alg(array, 0, size - 1, size);
+	sort_rec_algo(array, 0, size - 1, size);
 }
 
 /**
@@ -18,15 +18,15 @@ void quick_sort(int *array, size_t size)
   * @right: VAR3
   * @size: VAR4
   */
-void sort_rec_alg(int *arr, int left, int right, size_t size)
+void sort_rec_algo(int *arr, int left, int right, size_t size)
 {
 	int p;
 
 	if (left < right)
 	{
 		p = sp(arr, left, right, size);
-		sort_rec_alg(arr, left, p - 1, size);
-		sort_rec_alg(arr, p + 1, right, size);
+		sort_rec_algo(arr, left, p - 1, size);
+		sort_rec_algo(arr, p + 1, right, size);
 	}
 }
 

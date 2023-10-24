@@ -24,6 +24,7 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 int sp(int *arr, int left, int right, size_t size);
 
-void sort_rec_alg(int *arr, int left, int right, size_t size);
+void sort_rec_algo(int *arr, int left, int right, size_t size);
+
 
 #endif
