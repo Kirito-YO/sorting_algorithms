@@ -41,7 +41,7 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (head->n > head->nxt->n)
 			{
-				swap(list, head, head->nxt);
+				swp(list, head, head->nxt);
 				print_list(*list);
 				flag = 1;
 				head = head->prv;
@@ -54,7 +54,7 @@ void cocktail_sort_list(listint_t **list)
 		{
 			if (head->n < head->prv->n)
 			{
-				swap(list, head->prv, head);
+				swp(list, head->prv, head);
 				print_list(*list);
 				flag = 1;
 				head = head->nxt;
